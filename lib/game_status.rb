@@ -14,3 +14,11 @@ WIN_COMBINATIONS = [
   [0, 4, 8],
   [6, 4, 2]
 ]
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |combinations|
+    board[combination[0]]== board[combination[1]] &&
+    board[combination[1]] == board[combination[2]]&&
+    position_taken?(board, combination[0])
+  end
+end
